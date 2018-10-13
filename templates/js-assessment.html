@@ -223,20 +223,36 @@ You may use <b>plain JavaScript</b> and <b>jQuery</b> for this problem. Do not u
 <script>
   "use strict";
 
-  function factorial() {
-    const num = $('#number').html();
-    let total = 1;
-    // I can't figure out how to make an array given num.
-    // in python I would just do range(1, num+1), but that doesn't work.
-    const numLst = new Array(1, num); 
-    console.log(numLst);
-    for (let numb of numLst) {
-      total *= numb;
+  function makeArray() {
+    ///Make an array of numbers starting a 1 and ending at number inputed.
+
+    ///get the value of number input and assign to variable num
+    const num = $('#number').val();
+    ///make an array that starts at 1 and ends at num
+    let array = [];
+    for (let i = 1; i <= num; i+=1) {
+        array.push(i);
     }
-    return total;
-  } 
-const factTotal = $('#calculate').on('click', factorial);
-$('#result').html(factTotal);
+    ///call factorial function and pass total as the array.
+    factorial(array);
+  }
+
+  function factorial(array) {
+    ///Multiply all the numbers in the array together.
+    let total = 1
+    for (let num of array) {
+      total *= num;
+    }
+    updateResults(total);
+  }
+
+  function updateResults(total) {
+    ///change contents of results to the factorial total
+    $('#result').html(total);
+  }
+
+$('#calculate').on('click', makeArray);
+
 </script>
 
 <!-- /////////////////////////////////////////////////////////////////////// -->
@@ -309,9 +325,6 @@ $('#result').html(factTotal);
     });
   }
   initGetInfo();
-  
-
-
 </script>
 
 
