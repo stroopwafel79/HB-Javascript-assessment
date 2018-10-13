@@ -222,7 +222,19 @@ You may use <b>plain JavaScript</b> and <b>jQuery</b> for this problem. Do not u
 
 <script>
   "use strict";
-  // code here for above problem
+
+  function factorial() {
+    const num = $('#number').html();
+    let total = 1;
+    const numLst = new Array(1, num);
+    console.log(numLst);
+    for (let numb of numLst) {
+      total *= numb;
+    }
+    return total;
+  } 
+const factTotal = $('#calculate').on('click', factorial);
+$('#result').html(factTotal);
 </script>
 
 <!-- /////////////////////////////////////////////////////////////////////// -->
