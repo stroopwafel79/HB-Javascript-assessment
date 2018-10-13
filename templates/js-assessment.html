@@ -122,25 +122,17 @@ favColorForm.addEventListener('keypress', preventSubmit);
 
 <script>
   "use strict";
-  const redButton = document.querySelector('#red');
-  const blueButton = document.querySelector('#blue');
-  // Below only works for h1. When I try 
-  //const classColor = document.querySelectorAll('.colorChange');
-  //I get the following error: 
-  //Uncaught TypeError: Cannot set property 'color' of undefined
-  //at HTMLButtonElement.turnBlue (assessment:139)
-  const classColor = document.querySelector('.colorChange');
+  ///Make the Turn Red button listen for a click
+  $('#red').on('click', () => {
+    ///turn all members of the colorChange class to red.
+    $('.colorChange').css('color', 'red');
+  });
   
-
-  function turnRed() {
-    classColor[1].style.color = 'red';
-  }
-
-  function turnBlue() {
-    classColor.style.color = 'blue';
-  }
-  redButton.addEventListener('click', turnRed);
-  blueButton.addEventListener('click', turnBlue);
+  ///Make the Turn Blue button listen for a click
+  $('#blue').on('click', () => {
+    ///turn all members of the colorChange class to blue.
+    $('.colorChange').css('color', 'blue');
+  });
 </script>
 
 <!-- /////////////////////////////////////////////////////////////////////// -->
