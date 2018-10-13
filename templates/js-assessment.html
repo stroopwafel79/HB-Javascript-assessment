@@ -5,6 +5,7 @@
   <title>Skills JavaScript</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="static/styles.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body class="container">
 
@@ -121,7 +122,25 @@ favColorForm.addEventListener('keypress', preventSubmit);
 
 <script>
   "use strict";
-  // code here for above problem
+  const redButton = document.querySelector('#red');
+  const blueButton = document.querySelector('#blue');
+  // Below only works for h1. When I try 
+  //const classColor = document.querySelectorAll('.colorChange');
+  //I get the following error: 
+  //Uncaught TypeError: Cannot set property 'color' of undefined
+  //at HTMLButtonElement.turnBlue (assessment:139)
+  const classColor = document.querySelector('.colorChange');
+  
+
+  function turnRed() {
+    classColor.style.color = 'red';
+  }
+
+  function turnBlue() {
+    classColor.style.color = 'blue';
+  }
+  redButton.addEventListener('click', turnRed);
+  blueButton.addEventListener('click', turnBlue);
 </script>
 
 <!-- /////////////////////////////////////////////////////////////////////// -->
@@ -150,7 +169,11 @@ favColorForm.addEventListener('keypress', preventSubmit);
 
 <script>
   "use strict";
-  // code here for above problem
+  
+  function changeImg() {
+    $('img#kittenz-rule').attr('src', "/static/dog.jpg");
+  }
+  $('img#kittenz-rule').on('dblclick', changeImg);
 </script>
 
 <div class="hint">
