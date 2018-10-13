@@ -133,7 +133,7 @@ favColorForm.addEventListener('keypress', preventSubmit);
   
 
   function turnRed() {
-    classColor.style.color = 'red';
+    classColor[1].style.color = 'red';
   }
 
   function turnBlue() {
@@ -226,7 +226,9 @@ You may use <b>plain JavaScript</b> and <b>jQuery</b> for this problem. Do not u
   function factorial() {
     const num = $('#number').html();
     let total = 1;
-    const numLst = new Array(1, num);
+    // I can't figure out how to make an array given num.
+    // in python I would just do range(1, num+1), but that doesn't work.
+    const numLst = new Array(1, num); 
     console.log(numLst);
     for (let numb of numLst) {
       total *= numb;
@@ -293,7 +295,30 @@ $('#result').html(factTotal);
   </ul>
 </p>
 <script>
-  // code here for above problem
+
+  // const climate = document.querySelector('#climate');
+  // const terrain = document.querySelector('#terrain');
+  // const population = document.querySelector('#population');
+  // const button = document.querySelector('#getInfo');
+  
+ function initGetInfo() {
+  $('#getInfo').on('click', () => {
+    $.get('https://swapi.co/api/planets/1/', (results) => {
+      console.log(results);
+      });
+    });
+  }
+ 
+
+  // $('#getInfo').on('click', () => {
+  //   $.get('https://swapi.co/api/planets/1/', (results) => {
+  //     console.log(results);
+  //   });
+  // });
+  
+  // button.addEventListener('click', successFunction);
+
+
 </script>
 
 
