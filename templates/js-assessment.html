@@ -38,7 +38,18 @@
 <button id='signIn' class='signInText'>Log In</button>
 <script>
   "use strict";
-  // code here for above-problem
+  const signInButton = document.querySelector('#signIn');
+
+  function changeButton() {
+    if ( signInButton.innerText === 'Log In') {
+      signInButton.innerText = 'Log Out';
+    }
+    else {
+      signInButton.innerText = 'Log In';
+    }
+  }
+  signInButton.addEventListener('click', changeButton)
+
 </script>
 
 <div class="hint">
