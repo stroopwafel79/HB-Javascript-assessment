@@ -80,13 +80,18 @@
 
 <script>
   "use strict";
+  ///Find prevent-form-submission-form element and bind the document object to 
+  ///variable favColorForm
   const favColorForm = document.querySelector('#prevent-form-submission-form');
 
   function preventSubmit(evt) {
     alert('No favorite color for you!');
+    ///prevent page from reloading
     evt.preventDefault();
   }
 
+///make favColorForm object listen for a keypress. Run preventSubmit function
+///when the keypress happens.
 favColorForm.addEventListener('keypress', preventSubmit);
 
 </script>
@@ -163,8 +168,11 @@ favColorForm.addEventListener('keypress', preventSubmit);
   "use strict";
   
   function changeImg() {
+    ///update the image from kittenz-rule to the pic at the url
     $('img#kittenz-rule').attr('src', "/static/dog.jpg");
   }
+  ///make the kitten image 'listen' for a double-click
+  ///execute the changeImg function when the event occurs
   $('img#kittenz-rule').on('dblclick', changeImg);
 </script>
 
@@ -242,8 +250,9 @@ You may use <b>plain JavaScript</b> and <b>jQuery</b> for this problem. Do not u
     ///change contents of results to the factorial total
     $('#result').html(total);
   }
-
-$('#calculate').on('click', makeArray);
+  ///Make the calculate button listen for a click
+  ///execute makeArray function when even occurs
+  $('#calculate').on('click', makeArray);
 
 </script>
 
