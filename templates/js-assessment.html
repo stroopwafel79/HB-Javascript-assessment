@@ -295,27 +295,21 @@ $('#result').html(factTotal);
   </ul>
 </p>
 <script>
-
-  // const climate = document.querySelector('#climate');
-  // const terrain = document.querySelector('#terrain');
-  // const population = document.querySelector('#population');
-  // const button = document.querySelector('#getInfo');
   
  function initGetInfo() {
+  ///make getInfo button listen for a click
   $('#getInfo').on('click', () => {
+    ///Once clicked, make get request to url and return the results
     $.get('https://swapi.co/api/planets/1/', (results) => {
-      console.log(results);
+      ///change html at specified ids to value in results dict-like object
+      $('#climate').html(results['climate']);
+      $('#terrain').html(results['terrain']);
+      $('#population').html(results['population']);
       });
     });
   }
   initGetInfo();
-  // $('#getInfo').on('click', () => {
-  //   $.get('https://swapi.co/api/planets/1/', (results) => {
-  //     console.log(results);
-  //   });
-  // });
   
-  // button.addEventListener('click', successFunction);
 
 
 </script>
