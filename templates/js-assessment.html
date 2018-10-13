@@ -79,7 +79,15 @@
 
 <script>
   "use strict";
-  // code here for above problem
+  const favColorForm = document.querySelector('#prevent-form-submission-form');
+
+  function preventSubmit(evt) {
+    alert('No favorite color for you!');
+    evt.preventDefault();
+  }
+
+favColorForm.addEventListener('keypress', preventSubmit);
+
 </script>
 
 <div class="hint">
